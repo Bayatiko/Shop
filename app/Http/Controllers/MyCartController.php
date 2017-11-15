@@ -20,3 +20,13 @@ class MyCartController extends Controller
         ->with('carts',$cart);
     }
 }
+
+public function delete($id){
+        $cart = cart::find($id);
+    	if(!$cart){
+    		return redirect('/showmycart');
+    	}
+        $cart->delete();
+        return redirect('/showmycart');
+    }
+}
