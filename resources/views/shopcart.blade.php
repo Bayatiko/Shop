@@ -675,7 +675,7 @@
             <td class="a-left"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="2" name="cart[1312][qty]"></td>
             <td class="a-left"><span class="cart-price"> <span class="price"></span> </span></td>
             <td class="a-left hidden-table"><a title="Edit item parameters" href="#ma_optima/index.php/checkout/cart/configure/id/1314/" class="edit-bnt"><span>Edit</span></a></td>
-            <td class="a-left last"><a class="remove-item" title="Clear Cart" type="submit"><span><span>Remove item</span></span></a></td>
+            <td class="a-left last"><a class="remove-item" title="Clear Cart" href="/delete/{{$cart->id}}"><span><span>Remove item</span></span></a></td>
           </tr>
           @endforeach
         </tbody>
@@ -715,9 +715,9 @@
             <td><h2 class="product-name"> <a href="product_detail.html">{{$cart->product_title}}</a> </h2></td>
             <td class="a-left"><span class="cart-price"> <span class="price">{{$cart->product_price}}</span> </span></td>
             <td class="a-left"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="2" name="cart[1312][qty]"></td>
-            <td class="a-left"><span class="cart-price"> <span class="price">$900.00</span> </span></td>
+            <td class="a-left"><span class="cart-price"> <span class="price">{{$cart->product_price}}</span> </span></td>
             <td class="a-left hidden-phone"><a title="Edit item parameters" href="#ma_optima/index.php/checkout/cart/configure/id/1314/" class="edit-bnt"><span>Edit item</span></a></td>
-            <td class="a-left last"><a class="remove-item" title="Clear Cart" type="submit"><span>Remove item</span></a></td>
+            <td class="a-left last"><a class="remove-item" title="Clear Cart" href="/delete/{{$cart->id}}"><span>Remove item</span></a></td>
           </tr>
           @endforeach
         </tbody>
