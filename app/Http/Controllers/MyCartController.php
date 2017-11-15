@@ -21,3 +21,12 @@ class MyCartController extends Controller
     }
 }
 
+public function delete($id){
+        $cart = cart::find($id);
+    	if(!$cart){
+    		return redirect('/showmycart');
+    	}
+        $cart->delete();
+        return redirect('/showmycart');
+    }
+}
