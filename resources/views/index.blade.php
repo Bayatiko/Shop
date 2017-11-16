@@ -221,7 +221,7 @@
                         <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
                       </ul>
                     </li>
-                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="category/1"> <span>Women</span> </a>
+                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="/category/1"> <span>Women</span> </a>
                       <ul class="level0">
                         <li class="level1 nav-6-1 first"> <a href="grid.html"> <span>Unlocked phones</span> </a> </li>
                         <li class="level1 nav-6-2"> <a href="grid.html"> <span>Cell Phones with Service</span> </a> </li>
@@ -229,7 +229,7 @@
                         <li class="level1 nav-6-4 last"> <a href="grid.html"> <span>Accessories</span> </a> </li>
                       </ul>
                     </li>
-                    <li class="level0 nav-7 level-top parent"> <a class="level-top" href="category/2"> <span>Men</span> </a>
+                    <li class="level0 nav-7 level-top parent"> <a class="level-top" href="/category/2"> <span>Men</span> </a>
                       <ul class="level0">
                         <li class="level1 nav-7-1 first"> <a href="grid.html"> <span>Digital Cameras</span> </a> </li>
                         <li class="level1 nav-7-2 last"> <a href="grid.html"> <span>Camcorders</span> </a> </li>
