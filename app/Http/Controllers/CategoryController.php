@@ -9,8 +9,11 @@ use App\Category;
 class CategoryController extends Controller
 {
     
-    public function index($id){
+   public function index($id){
         $product = Product::where('cat_id',$id)->get();
-        return view('category')->with('products',$product);
-    }
+        $category = Category::all();
+        return view('category')
+            ->with('products',$product)
+            ->with('categorys',$category);
+    }   
 }
