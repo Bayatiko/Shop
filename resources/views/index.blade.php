@@ -187,8 +187,8 @@
                         <li class="level1"><a href="../aqua/index.html"><span>Aqua</span></a> </li>
                         <li class="level1"><a href="../pink/index.html"><span>Pink</span></a> </li>
                         <li class="level1"><a href="../red/index.html"><span>Red</span></a> </li>
-                        <li class="level1"><a href="../yellow/index.html"><span>Yellow</span></a> </li>
-                      </ul>-->
+                        <li class="level1"><a href="../yellow/index.html"><span>Yellow</span></a> </li>-->
+                      </ul>
                     </li>
                     <li class="level0 nav-6 level-top"> <a class="level-top" href="#"> <span>Pages</span> </a>
                       <ul class="level0">
@@ -221,7 +221,8 @@
                         <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
                       </ul>
                     </li>
-                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="/category/1"> <span>Women</span> </a>
+                    @foreach($categorys as $category)
+                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="/category/{{$category->id}}"> <span>{{$category->title}}</span> </a>
                       <ul class="level0">
                         <li class="level1 nav-6-1 first"> <a href="grid.html"> <span>Unlocked phones</span> </a> </li>
                         <li class="level1 nav-6-2"> <a href="grid.html"> <span>Cell Phones with Service</span> </a> </li>
@@ -229,34 +230,7 @@
                         <li class="level1 nav-6-4 last"> <a href="grid.html"> <span>Accessories</span> </a> </li>
                       </ul>
                     </li>
-                    <li class="level0 nav-7 level-top parent"> <a class="level-top" href="/category/2"> <span>Men</span> </a>
-                      <ul class="level0">
-                        <li class="level1 nav-7-1 first"> <a href="grid.html"> <span>Digital Cameras</span> </a> </li>
-                        <li class="level1 nav-7-2 last"> <a href="grid.html"> <span>Camcorders</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level0 nav-8 level-top parent"> <a class="level-top" href="grid.html"> <span>Electronics</span> </a>
-                      <ul class="level0">
-                        <li class="level1 nav-8-1 first"> <a href="grid.html"> <span>Desktops</span> </a> </li>
-                        <li class="level1 nav-8-2"> <a href="grid.html"> <span>Laptops</span> </a> </li>
-                        <li class="level1 nav-8-3"> <a href="grid.html"> <span>Netbooks</span> </a> </li>
-                        <li class="level1 nav-8-4 last parent"> <a href="grid.html"> <span>Tablets</span> </a>
-                          <ul class="level1">
-                            <li class="level2 nav-8-4-1 first"> <a href="grid.html"> <span>Android</span> </a> </li>
-                            <li class="level2 nav-8-4-2"> <a href="grid.html"> <span>Apple</span> </a> </li>
-                            <li class="level2 nav-8-4-3 last"> <a href="grid.html"> <span>Windows</span> </a> </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="level0 nav-9 level-top"> <a class="level-top" href="grid.html"> <span>Furniture</span> </a> </li>
-                    <li class="level0 nav-10 level-top "> <a class="level-top" href="grid.html"> <span>Boys</span> </a>
-                      <ul class="level0">
-                        <li class="level1 nav-10-1 first"> <a href="grid.html"> <span>GPS Trackers</span> </a> </li>
-                        <li class="level1 nav-10-2 last"> <a href="grid.html"> <span>GPS System Accessories</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level0 nav-9 level-top last parent "> <a class="level-top" href="grid.html"> <span>Girls</span> </a> </li>
+                    @endforeach                    
                   </ul>
                 </li>
               </ul>
@@ -313,7 +287,8 @@
               <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
             </ul>
           </li>
-          <li class="level0 nav-5 level-top first"> <a href="grid.html" class="level-top "> <span>Women</span> </a>
+          @foreach($categorys as $category)
+          <li class="level0 nav-5 level-top first"> <a href="/category/{{$category->id}}" class="level-top "> <span>{{$category->title}}</span> </a>
             <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
               <div class="level0-wrapper2">
                 <div class="nav-block nav-block-center">
@@ -382,270 +357,7 @@
               </div>
             </div>
           </li>
-          <li class="level0 nav-7 level-top parent"> <a href="grid.html" class="level-top"> <span>Men</span> </a>
-            <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center">
-                  <ul class="level0">
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Shoes</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Sport Shoes</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Casual Shoes</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Leather Shoes</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Canvas shoes</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Dresses</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Casual Dresses</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Evening</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Designer</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Party</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Jackets</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Coats</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Formal Jackets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Leather Jackets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Blazers</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Watches</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Fasttrack</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Casio</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Titan</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Tommy-Hilfiger</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Sunglasses</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Ray Ban</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Fasttrack</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Police</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Oakley</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                  </ul>
-                  <!--level0--> 
-                </div>
-                <!--nav-block nav-block-center--> 
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-6 level-top parent"> <a href="grid.html" class="level-top"> <span>Electronics</span> </a>
-            <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center grid13-8 itemgrid itemgrid-4col">
-                  <ul class="level0">
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Mobiles</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Samsung</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Nokia</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>iPhone</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Sony</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Accesories</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Mobile Memory Cards</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Cases &amp; Covers</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Mobile Headphones</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Bluetooth Headsets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Cameras</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Camcorders</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Point &amp; Shoot</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Digital SLR</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Camera Accesories</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Audio &amp; Video</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>MP3 Players</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>IPods</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Speakers</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Video Players</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                  </ul>
-                  <!--level0--> 
-                </div>
-                <div class="nav-block nav-block-right std grid12-3"> <a class="product-image" title="Stablished fact reader" href="grid.html"> <img alt="Stablished fact reader" src="../products-images/product1.jpg" width="150"></a>
-                  <div class="item-title"> <a href="#" title="Ut tincidunt tortor"> Sample Product </a> </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-7 level-top parent"> <a class="level-top" href="grid.html"> <span>Furniture</span> </a>
-            <div class="level0-wrapper dropdown-6col" style="left: 0pt; display: none;">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center grid12-8 itemgrid itemgrid-4col">
-                  <ul class="level0">
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Living Room</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Racks &amp; Cabinets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Sofas</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Chairs</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Tables</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Dining &amp; Bar</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Dining Table Sets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Serving Trolleys</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Bar Counters</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Dining Cabinets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item"> <a href="grid.html"><span>Bedroom</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Beds</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Chest of Drawers</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Wardrobes &amp; Almirahs</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Nightstands</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                  </ul>
-                  <!--level0--> 
-                </div>
-                <div class="nav-block nav-block-right std grid12-4"><a href="grid.html"><img src="images/download.jpg"  alt="menu furniture" class="fade-on-hover"></a> </div>
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-8 level-top"> <a href="grid.html" class="level-top"> <span>Boys</span> </a> </li>
-          <li class="nav-custom-link level0 level-top parent"> <a class="level-top" href="#"><span>Custom</span></a>
-            <div style="display: none; left: 0px;" class="level0-wrapper">
-              <div class="header-nav-dropdown-wrapper clearer">
-                <div class="grid12-5"> 
-                  <!--<h4 class="heading">HTML5 + CSS3</h4> -->
-                  <div class="custom_img"><img src="images/custom-img1.jpg" alt="custom img"></div>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
-                </div>
-                <div class="grid12-5"> 
-                  <!--  <h4 class="heading">Responsive Design</h4> --> 
-                  <a href="#">
-                  <div class="custom_img"><img src="images/custom-img1.jpg" alt="custom img"></div>
-                  </a>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
-                </div>
-                <div class="grid12-5"> 
-                  <!--   <h4 class="heading">Google Fonts</h4> --> 
-                  <a href="#">
-                  <div class="custom_img"><img src="images/custom-img1.jpg" alt="custom img"></div>
-                  </a>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
-                </div>
-                <div class="grid12-5"> 
-                  <!--<h4 class="heading">Smart Product Grid</h4> --> 
-                  <a href="#">
-                  <div class="custom_img"><img src="images/custom-img1.jpg" alt="custom img"></div>
-                  </a>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
-                </div>
-                <br>
-              </div>
-            </div>
-          </li>
+          @endforeach
         </ul>
         <!-- Search-col -->
         <div class="search-box">
@@ -1254,7 +966,7 @@
         </div>
         <div id="featured-product-slider" class="product-flexslider hidden-buttons">
           <div class="slider-items slider-width-col6"> 
-            
+          @foreach($product as $products)
             <!-- Item -->
             <div class="item">
               <div class="col-item">
@@ -1263,18 +975,18 @@
                     <div class="product-image"> <a href="product_detail.html">
                       <figure class="product-display">
                         <div class="sale-label sale-top-left">Sale</div>
-                        <img src="../images/img_9753_1.jpg" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure>
+                        <img src="../images/{{$products->img}}" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure><!---poxel---->
                       </a> </div>
                     <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
+                      <div class="product-action"> <a class="addcart" href="/addtocart/{{$products->id}}"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
                     </div>
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">Sample Product</a> </div>
+                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">{{$products->title}}</a> </div>
                       <div class="item-content">
                         <div class="item-price">
-                          <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
+                          <div class="price-box"> <span class="regular-price"> <span class="price">{{$products->price}}</span> </span> </div>
                         </div>
                         <div class="rating">
                           <div class="ratings">
@@ -1291,186 +1003,9 @@
               </div>
             </div>
             <!-- End Item --> 
-            
+            @endforeach
             <!-- Item -->
-            <div class="item">
-              <div class="col-item">
-                <div class="item-inner">
-                  <div class="product-block">
-                    <div class="product-image"> <a href="product_detail.html">
-                      <figure class="product-display">
-                        <div class="sale-label sale-top-left">Sale</div>
-                        <img src="../images/48a9994cfb2b2b49b02891deebacd6fe.jpg " class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/fb769ee1dcfdf13dde2d34669467c537.jpg"> </figure>
-                      </a> </div>
-                    <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">Sample Product</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                        </div>
-                        <div class="rating">
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style="width:80%"></div>
-                            </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Item --> 
-            <!-- Item -->
-            <div class="item">
-              <div class="col-item">
-                <div class="item-inner">
-                  <div class="product-block">
-                    <div class="product-image"> <a href="product_detail.html">
-                      <figure class="product-display">
-                        <div class="sale-label sale-top-left">Sale</div>
-                        <img src="../images/_-_-01-_-_-17__2.jpg" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure>
-                      </a> </div>
-                    <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">Sample Product</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                        </div>
-                        <div class="rating">
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style="width:80%"></div>
-                            </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Item --> 
-            <!-- Item -->
-            <div class="item">
-              <div class="col-item">
-                <div class="item-inner">
-                  <div class="product-block">
-                    <div class="product-image"> <a href="product_detail.html">
-                      <figure class="product-display">
-                        <div class="sale-label sale-top-left">Sale</div>
-                        <img src="../images/184601_2834_2734.jpg" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure>
-                      </a> </div>
-                    <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">Sample Product</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                        </div>
-                        <div class="rating">
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style="width:80%"></div>
-                            </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Item --> 
-            <!-- Item -->
-            <div class="item">
-              <div class="col-item">
-                <div class="item-inner">
-                  <div class="product-block">
-                    <div class="product-image"> <a href="product_detail.html">
-                      <figure class="product-display">
-                        <div class="sale-label sale-top-left">Sale</div>
-                        <img src="../products-images/product1.jpg" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure>
-                      </a> </div>
-                    <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">Sample Product</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                        </div>
-                        <div class="rating">
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style="width:80%"></div>
-                            </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Item --> 
-            <!-- Item -->
-            <div class="item">
-              <div class="col-item">
-                <div class="item-inner">
-                  <div class="product-block">
-                    <div class="product-image"> <a href="product_detail.html">
-                      <figure class="product-display">
-                        <div class="sale-label sale-top-left">Sale</div>
-                        <img src="../products-images/product1.jpg" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure>
-                      </a> </div>
-                    <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                    </div>
-                  </div>
-                  <div class="item-info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">Sample Product</a> </div>
-                      <div class="item-content">
-                        <div class="item-price">
-                          <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                        </div>
-                        <div class="rating">
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style="width:80%"></div>
-                            </div>
-                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
             <!-- End Item --> 
                
           </div>
