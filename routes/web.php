@@ -20,7 +20,7 @@ Route::get('/users/logout', 'Auth\LoginController@userLogout')->name('user.logou
 Route::prefix('admin')->group(function(){
 Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/login','Auth\AdminLoginController@login')->name('admin.login.submit');
-Route::get('/', 'AdminController@index')->name('admin.dashboard');
+Route::get('/','AdminController@index')->name('admin.dashboard');
 Route::get('/logout','Auth\AdminLoginController@logout')->name('admin.logout');
 //Password reset
 Route::post('/password/email','Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
@@ -28,6 +28,7 @@ Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequest
 Route::put('/password/reset','Auth\AdminResetPasswordController@reset');
 Route::put('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');     
 });
+
 Route::get('/delete/{id}',
 ['uses' => 'MyCartController@delete']);
 Route::get('/category/{id}','CategoryController@index');
