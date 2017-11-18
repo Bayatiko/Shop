@@ -18,21 +18,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- CSS Style -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="all">
-<link rel="stylesheet" type="text/css" href="css/slider.css" media="all">
-<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="css/owl.theme.css">
-<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
-<script>
-$.get($(this).attr('href'), function(){
-            $this.parents('td class="a-left last"').remove();</script>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/slider.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="/css/owl.theme.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/responsive.css">
+
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body class="cms-index-index cms-home-page">
+
 <!-- Header -->
 <header>
   <div class="top-links">
@@ -66,7 +65,7 @@ $.get($(this).attr('href'), function(){
             <div class="links">
               <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
               <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
-              <div class="check"><a title="Checkout" Proceed to Checkout"><span class="hidden-xs">Checkout</span></a></div>
+              <div class="check"><a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a></div>
               <div class="demo"><a href="blog.html" title="Demo"><span class="hidden-xs">Blog</span></a></div>
               <!-- Header Language -->
               <div class="dropdown company hidden-xs"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle click-nav" href="#"> Company <span class="caret"></span> </a>
@@ -93,7 +92,7 @@ $.get($(this).attr('href'), function(){
       <div class="row">
         <div class="col-lg-6 col-sm-6 col-xs-12"> 
           <!-- Header Logo -->
-          <div class="logo"><a title="Magento Commerce" href="/"><img alt="Magento Commerce" src="images/logo.png"></a> </div>
+          <div class="logo"><a title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="images/logo.png"></a> </div>
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-6 col-sm-6 col-xs-12">
@@ -104,13 +103,21 @@ $.get($(this).attr('href'), function(){
                 <div style="display: none;" class="top-cart-content arrow_box">
                   <div class="block-subtitle">Recently added item(s)</div>
                   <ul id="cart-sidebar" class="mini-products-list">
-                  @foreach($carts as $cart)
-                    <li class="item odd"> <a href="#" title="Skater Dress In Leaf Print" class="product-image"><img src="/images/{{$cart->product_img}}" alt="Skater Dress In Leaf Print" width="55"></a>
-                      <div class="product_details"> <a href="/delete/{{$cart->id}}" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                        <p class="product-name"><a href="/delete/{{$cart->id}}">{{$cart->product_title}}</a> </p>
-                        <strong>1</strong> x <span class="price">{{$cart->product_price}}</span> </div>
+                    <li class="item odd"> <a href="#" title="Skater Dress In Leaf Print" class="product-image"><img src="../products-images/product1.jpg" alt="Skater Dress In Leaf Print" width="55"></a>
+                      <div class="product_details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
+                        <p class="product-name"><a href="#">Skinny Jeans in Audacity of Taupe</a> </p>
+                        <strong>1</strong> x <span class="price">$20.00</span> </div>
                     </li>
-                  @endforeach
+                    <li class="item even"> <a href="#" title="Product layout: large content" class="product-image"><img src="../products-images/product1.jpg" alt="Product layout: large content" width="55"></a>
+                      <div class="product_details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
+                        <p class="product-name"><a href="#">V-Neck Tee in Biscuits n' Navy</a> </p>
+                        <strong>1</strong> x <span class="price">$230.00</span> </div>
+                    </li>
+                    <li class="item last odd"> <a href="#" title="Skater Dress In Leaf Print" class="product-image"><img src="../products-images/product1.jpg" alt="Skater Dress In Leaf Print" width="55"></a>
+                      <div class="product_details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a><a class="btn-edit" title="Edit item" href="#">Edit item</a>
+                        <p class="product-name"><a href="#">V-Neck Tee in Biscuits n' Navy</a> </p>
+                        <strong>2</strong> x <span class="price">$420.00</span> </div>
+                    </li>
                   </ul>
                   <div class="top-subtotal">Subtotal: <span class="price">$520.00</span></div>
                   <div class="actions">
@@ -135,730 +142,1215 @@ $.get($(this).attr('href'), function(){
 <!-- end header --> 
 <!-- Navbar -->
 <nav>
-  <div class="container">
-    <div class="row">
-      <div class="nav-inner"> 
-        <!-- mobile-menu -->
-        <div class="hidden-desktop" id="menu">
-          <ul class="navmenu">
-            <li>
-              <div class="menutop">
-                <div class="toggle"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div>
-                <!--<h2>Menu</h2>--> 
-              </div>
-              <ul style="display:none;" class="submenu">
-                <li>
-                  <ul class="topnav">
-                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.html"> <span>Home</span> </a>
-                      <ul class="level0">
-                        <!-- <li class="level1"><a href="../green/index.html"><span>Green</span></a> </li>
-                        <li class="level1"><a href="../aqua/index.html"><span>Aqua</span></a> </li>
-                        <li class="level1"><a href="../pink/index.html"><span>Pink</span></a> </li>
-                        <li class="level1"><a href="../red/index.html"><span>Red</span></a> </li>
-                        <li class="level1"><a href="../yellow/index.html"><span>Yellow</span></a> </li>-->
-                      </ul>
-                    </li>
-                    <li class="level0 nav-6 level-top"> <a class="level-top" href="#"> <span>Pages</span> </a>
-                      <ul class="level0">
-                        <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-                        <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-                        <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
-                        <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
-                        <li class="level1 first parent"><a Proceed to Checkout"><span>Checkout</span></a>
-                          <ul class="level2">
-                            <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                            <li class="level2 nav-2-1-5 last"><a href="checkout_billing-info.html"><span>Checkout Billing Info</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
-                        <li class="level1"> <a href="dashboard.html"> <span>Dashboard</span> </a> </li>
-                        <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
-                        <li class="level1 first parent"><a Proceed to Checkout"><span>Bolg</span></a>
-                          <ul class="level2">
-                            <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Blog Detail</span></a></li>
-                          </ul>
-                        </li>
-                        <li class="level1"> <a href="about.html"> <span>About us</span> </a> </li>
-                        <li class="level1"><a href="compare.html"><span>Compare</span></a></li>
-                        <li class="level1"><a href="delivery.html"><span>Delivery</span></a> </li>
-                        <li class="level1"><a href="faq.html"><span>FAQ</span></a> </li>
-                        <li class="level1"><a href="quick_view.html"><span>Quick View</span></a> </li>
-                        <li class="level1"><a href="newsletter.html"><span>Newsletter</span></a> </li>
-                        <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
-                        <li class="level1"><a href="sitemap.html"><span>Sitemap</span></a> </li>
-                        <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
-                      </ul>
-                    </li>
-                    @foreach($categorys as $category)
-                    <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="/category/{{$category->id}}"> <span>{{$category->title}}</span> </a>
-                      <ul class="level0">
-                        <li class="level1 nav-6-1 first"> <a href="grid.html"> <span>Unlocked phones</span> </a> </li>
-                        <li class="level1 nav-6-2"> <a href="grid.html"> <span>Cell Phones with Service</span> </a> </li>
-                        <li class="level1 nav-6-3"> <a href="grid.html"> <span>Sim cards</span> </a> </li>
-                        <li class="level1 nav-6-4 last"> <a href="grid.html"> <span>Accessories</span> </a> </li>
-                      </ul>
-                    </li>
-                    @endforeach                    
-                  </ul>
-                </li>
-              </ul>
-            </li>
+<div class="container">
+  <div class="row">
+    <div class="nav-inner"> 
+      <!-- mobile-menu -->
+      <div class="hidden-desktop" id="menu">
+        <ul class="navmenu">
+          <li>
+            <div class="menutop">
+              <div class="toggle"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div>
+              <!--<h2>Menu</h2>--> 
+            </div>
+            <ul style="display:none;" class="submenu">
+              <li>
+                <ul class="topnav">
+                  <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.html"> <span>Home</span> </a>
+                    <ul class="level0">
+                      <!-- <li class="level1"><a href="../green/index.html"><span>Green</span></a> </li>
+                      <li class="level1"><a href="../aqua/index.html"><span>Aqua</span></a> </li>
+                      <li class="level1"><a href="../pink/index.html"><span>Pink</span></a> </li>
+                      <li class="level1"><a href="../red/index.html"><span>Red</span></a> </li>
+                      <li class="level1"><a href="../yellow/index.html"><span>Yellow</span></a> </li>-->
+                    </ul>
+                  </li>
+                  <li class="level0 nav-6 level-top"> <a class="level-top" href="#"> <span>Pages</span> </a>
+                    <ul class="level0">
+                      <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
+                      <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
+                      <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
+                      <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
+                      <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a>
+                        <ul class="level2">
+                          <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
+                          <li class="level2 nav-2-1-5 last"><a href="checkout_billing-info.html"><span>Checkout Billing Info</span></a></li>
+                        </ul>
+                      </li>
+                      <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
+                      <li class="level1"> <a href="dashboard.html"> <span>Dashboard</span> </a> </li>
+                      <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
+                      <li class="level1 first parent"><a href="checkout.html"><span>Bolg</span></a>
+                        <ul class="level2">
+                          <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Blog Detail</span></a></li>
+                        </ul>
+                      </li>
+                      <li class="level1"> <a href="about.html"> <span>About us</span> </a> </li>
+                      <li class="level1"><a href="compare.html"><span>Compare</span></a></li>
+                      <li class="level1"><a href="delivery.html"><span>Delivery</span></a> </li>
+                      <li class="level1"><a href="faq.html"><span>FAQ</span></a> </li>
+                      <li class="level1"><a href="quick_view.html"><span>Quick View</span></a> </li>
+                      <li class="level1"><a href="newsletter.html"><span>Newsletter</span></a> </li>
+                      <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
+                      <li class="level1"><a href="sitemap.html"><span>Sitemap</span></a> </li>
+                      <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
+                    </ul>
+                  </li>
+                  @foreach($categorys as $category)
+                  <li class="level0 nav-6 level-top first parent"> <a class="level-top" href="/category/{{$category->id}}"> <span>{{$category->title}}</span> </a>
+                    <ul class="level0">
+                      <li class="level1 nav-6-1 first"> <a href="grid.html"> <span>Unlocked phones</span> </a> </li>
+                      <li class="level1 nav-6-2"> <a href="grid.html"> <span>Cell Phones with Service</span> </a> </li>
+                      <li class="level1 nav-6-3"> <a href="grid.html"> <span>Sim cards</span> </a> </li>
+                      <li class="level1 nav-6-4 last"> <a href="grid.html"> <span>Accessories</span> </a> </li>
+                    </ul>
+                  </li>
+                  @endforeach                    
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!--navmenu--> 
+      </div>
+      <!--End mobile-menu -->
+      <ul id="nav" class="hidden-xs">
+      <li class="level0 parent drop-menu"  id="current-page"><a href="index.html"><span>Home</span> </a>
+          <ul style="display: none;" class="level1">
+            <li class="level1 first parent"><a href="../green/index.html"><span>Green</span></a> </li>
+            <li class="level1 parent"><a href="../aqua/index.html"><span>Aqua</span></a> </li>
+            <li class="level1 parent"><a href="../pink/index.html"><span>Pink</span></a> </li>
+            <li class="level1 parent"><a href="../red/index.html"><span>Red</span></a></li>
+            <li class="level1 parent"><a href="../yellow/index.html"><span>Yellow</span></a></li>
+      
           </ul>
-          <!--navmenu--> 
-        </div>
-        <!--End mobile-menu -->
-        <ul id="nav" class="hidden-xs">
-        <li class="level0 parent drop-menu"  id="current-page"><a href="index.html"><span>Home</span> </a>
-            <ul style="display: none;" class="level1">
-              <li class="level1 first parent"><a href="../green/index.html"><span>Green</span></a> </li>
-              <li class="level1 parent"><a href="../aqua/index.html"><span>Aqua</span></a> </li>
-              <li class="level1 parent"><a href="../pink/index.html"><span>Pink</span></a> </li>
-              <li class="level1 parent"><a href="../red/index.html"><span>Red</span></a></li>
-              <li class="level1 parent"><a href="../yellow/index.html"><span>Yellow</span></a></li>
+        </li>
         
-            </ul>
-          </li>
-          
-          <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a> 
-            <!--sub sub category-->
-            <ul class="level1">
-              <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-              <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-              <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
-              <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
-              <li class="level1 first parent"><a Proceed to Checkout"><span>Checkout</span></a> 
-                <!--sub sub category-->
-                <ul class="level2 right-sub">
-                  <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                  <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
+        <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a> 
+          <!--sub sub category-->
+          <ul class="level1">
+            <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
+            <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
+            <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
+            <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
+            <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a> 
+              <!--sub sub category-->
+              <ul class="level2 right-sub">
+                <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
+                <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
+              </ul>
+              <!--sub sub category--> 
+            </li>
+            <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
+            <li class="level1"> <a href="dashboard.html"> <span>Dashboard</span> </a> </li>
+            <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
+            <li class="level1"> <a href="about_us.html"> <span>About us</span> </a> </li>
+            <li class="level1"><a href="compare.html"><span>Compare</span></a></li>
+            <li class="level1"><a href="delivery.html"><span>Delivery</span></a> </li>
+            <li class="level1"><a href="faq.html"><span>FAQ</span></a> </li>
+            <li class="level1"><a href="quick_view.html"><span>Quick View</span></a> </li>
+            <li class="level1"><a href="newsletter.html"><span>Newsletter</span></a> </li>
+            <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
+            <li class="level1"><a href="sitemap.html"><span>Sitemap</span></a> </li>
+            <li class="level1 first parent"><a href="blog.html"><span>Blog</span></a> 
+              <!--sub sub category-->
+              <ul class="level2 right-sub">
+                <li class="level2 nav-2-1-1 first"><a href="blog_detail.html"><span>Blog Detail</span></a></li>
+              </ul>
+              <!--sub sub category--> 
+            </li>
+            <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
+          </ul>
+        </li>
+        @foreach($categorys as $category)
+        <li class="level0 nav-5 level-top first"> <a href="/category/{{$category->id}}" class="level-top "> <span>{{$category->title}}</span> </a>
+          <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
+            <div class="level0-wrapper2">
+              <div class="nav-block nav-block-center">
+                <ul class="level0">
+                  <li class="level1 nav-6-1 first parent item"> <a href="grid.html"> <span>Styliest Bag </span> </a>
+                    <ul class="level1">
+                      <li class="level2 nav-6-1-1 first"> <a href="grid.html"> <span>Clutch Handbags</span> </a> </li>
+                      <li class="level2 nav-6-1-2"> <a href="grid.html"> <span>Diaper Bags</span> </a> </li>
+                      <li class="level2 nav-6-1-2"> <a href="grid.html"> <span>Bags</span> </a> </li>
+                      <li class="level2 nav-6-1-3 last"> <a href="grid.html"> <span>Hobo Handbags</span> </a> </li>
+                    </ul>
+                  </li>
+                  <li class="level1 nav-6-2 parent item"> <a href="grid.html"> <span>Material Bag</span> </a>
+                    <ul class="level1">
+                      <li class="level2 nav-6-2-4 first"> <a href="grid.html"> <span>Beaded Handbags</span> </a> </li>
+                      <li class="level2 nav-6-2-5"> <a href="grid.html"> <span>Fabric Handbags</span> </a> </li>
+                      <li class="level2 nav-6-2-5"> <a href="grid.html"> <span>Handbags</span> </a> </li>
+                      <li class="level2 nav-6-2-6 last"> <a href="grid.html"> <span>Leather Handbags</span> </a> </li>
+                    </ul>
+                  </li>
+                  <li class="level1 nav-6-3 parent item"> <a href="grid.html"> <span>Designer Bag</span> </a>
+                    <ul class="level1">
+                      <li class="level2 nav-6-3-9 first"> <a href="grid.html"> <span>Flat Shoes</span> </a> </li>
+                      <li class="level2 nav-6-3-10"> <a href="grid.html"> <span>Flat Sandals</span> </a> </li>
+                      <li class="level2 nav-6-3-11"> <a href="grid.html"> <span>Boots</span> </a> </li>
+                      <li class="level2 nav-6-3-12 last"> <a href="grid.html"> <span>Heels</span> </a> </li>
+                    </ul>
+                  </li>
+                  <li class="level1 nav-6-4 parent item"> <a href="grid.html"> <span>Cotton Bag</span> </a>
+                    <ul class="level1">
+                      <li class="level2 nav-6-4-13 first"> <a href="grid.html"> <span>Bracelets</span> </a> </li>
+                      <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Necklaces &amp; Pendants</span> </a> </li>
+                      <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Pendants</span> </a> </li>
+                      <li class="level2 nav-6-4-15 last"> <a href="grid.html"> <span>Pins &amp; Brooches</span> </a> </li>
+                    </ul>
+                  </li>
+                  <li class="level1 nav-6-5 last parent item"> <a href="grid.html"> <span>Swimwear</span> </a>
+                    <ul class="level1">
+                      <li class="level2 nav-6-8-28 first"> <a href="grid.html"> <span>Swimsuits</span> </a> </li>
+                      <li class="level2 nav-6-8-29"> <a href="grid.html"> <span>Beach Clothing</span> </a> </li>
+                      <li class="level2 nav-6-8-29"> <a href="grid.html"> <span>Clothing</span> </a> </li>
+                      <li class="level2 nav-6-8-30 last"> <a href="grid.html"> <span>Bikinis</span> </a> </li>
+                    </ul>
+                  </li>
                 </ul>
-                <!--sub sub category--> 
-              </li>
-              <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
-              <li class="level1"> <a href="dashboard.html"> <span>Dashboard</span> </a> </li>
-              <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
-              <li class="level1"> <a href="about_us.html"> <span>About us</span> </a> </li>
-              <li class="level1"><a href="compare.html"><span>Compare</span></a></li>
-              <li class="level1"><a href="delivery.html"><span>Delivery</span></a> </li>
-              <li class="level1"><a href="faq.html"><span>FAQ</span></a> </li>
-              <li class="level1"><a href="quick_view.html"><span>Quick View</span></a> </li>
-              <li class="level1"><a href="newsletter.html"><span>Newsletter</span></a> </li>
-              <li class="level1"><a href="contact_us.html"><span>Contact us</span></a> </li>
-              <li class="level1"><a href="sitemap.html"><span>Sitemap</span></a> </li>
-              <li class="level1 first parent"><a href="blog.html"><span>Blog</span></a> 
-                <!--sub sub category-->
-                <ul class="level2 right-sub">
-                  <li class="level2 nav-2-1-1 first"><a href="blog_detail.html"><span>Blog Detail</span></a></li>
-                </ul>
-                <!--sub sub category--> 
-              </li>
-              <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
-            </ul>
-          </li>
-          @foreach($categorys as $category)
-          <li class="level0 nav-5 level-top first"> <a href="/category/{{$category->id}}" class="level-top "> <span>{{$category->title}}</span> </a>
-            <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center">
-                  <ul class="level0">
-                    <li class="level1 nav-6-1 first parent item"> <a href="grid.html"> <span>Styliest Bag </span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1 first"> <a href="grid.html"> <span>Clutch Handbags</span> </a> </li>
-                        <li class="level2 nav-6-1-2"> <a href="grid.html"> <span>Diaper Bags</span> </a> </li>
-                        <li class="level2 nav-6-1-2"> <a href="grid.html"> <span>Bags</span> </a> </li>
-                        <li class="level2 nav-6-1-3 last"> <a href="grid.html"> <span>Hobo Handbags</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-2 parent item"> <a href="grid.html"> <span>Material Bag</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-2-4 first"> <a href="grid.html"> <span>Beaded Handbags</span> </a> </li>
-                        <li class="level2 nav-6-2-5"> <a href="grid.html"> <span>Fabric Handbags</span> </a> </li>
-                        <li class="level2 nav-6-2-5"> <a href="grid.html"> <span>Handbags</span> </a> </li>
-                        <li class="level2 nav-6-2-6 last"> <a href="grid.html"> <span>Leather Handbags</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-3 parent item"> <a href="grid.html"> <span>Designer Bag</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-3-9 first"> <a href="grid.html"> <span>Flat Shoes</span> </a> </li>
-                        <li class="level2 nav-6-3-10"> <a href="grid.html"> <span>Flat Sandals</span> </a> </li>
-                        <li class="level2 nav-6-3-11"> <a href="grid.html"> <span>Boots</span> </a> </li>
-                        <li class="level2 nav-6-3-12 last"> <a href="grid.html"> <span>Heels</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-4 parent item"> <a href="grid.html"> <span>Cotton Bag</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-4-13 first"> <a href="grid.html"> <span>Bracelets</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Necklaces &amp; Pendants</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Pendants</span> </a> </li>
-                        <li class="level2 nav-6-4-15 last"> <a href="grid.html"> <span>Pins &amp; Brooches</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-5 last parent item"> <a href="grid.html"> <span>Swimwear</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-8-28 first"> <a href="grid.html"> <span>Swimsuits</span> </a> </li>
-                        <li class="level2 nav-6-8-29"> <a href="grid.html"> <span>Beach Clothing</span> </a> </li>
-                        <li class="level2 nav-6-8-29"> <a href="grid.html"> <span>Clothing</span> </a> </li>
-                        <li class="level2 nav-6-8-30 last"> <a href="grid.html"> <span>Bikinis</span> </a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="nav-add">
-                <div class="push_item">
-                  <div class="push_img"> <a href="#"> <img  alt=""   src="images/6XL.jpg" width=" 137"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <div class="push_item">
-                  <div class="push_img"> <a href="#"> <img  alt="" src="images/S-SABOR-2017-russo-estilo-Primavera-Outono-Novas-mulheres-cor-s-lida-vestido-longo-com-lace.jpg" width="137"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <div class="push_item">
-                  <div class="push_img"> <a href="#"> <img  alt="" src="images/S-SABOR-2017-russo-estilo-Primavera-Outono-Novas-mulheres-cor-s-lida-vestido-longo-com-lace.jpg" width="137"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <div class="push_item push_item_last">
-                  <div class="push_img"> <a href="#"> <img  alt="" src="images/S-SABOR-2017-russo-estilo-Primavera-Outono-Novas-mulheres-cor-s-lida-vestido-longo-com-lace.jpg" width="137"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <br class="clear">
               </div>
             </div>
-          </li>
-          @endforeach
-        </ul>
-        <!-- Search-col -->
-        <div class="search-box">
-          <form action="se" method="POST" id="search_mini_form" name="search">
-            <input type="text" placeholder="Search entire store here..."  maxlength="70"  name="search" id="search">
-            <button id="submit-button" class="button-common search-btn-bg"><span class="searchIconNew"></span></button>
-          </form>
-        </div>
-        <!-- End Search-col --> 
+            <div class="nav-add">
+              <div class="push_item">
+                <div class="push_img"> <a href="#"> <img  alt=""   src="images/6XL.jpg" width=" 137"> </a> </div>
+                <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
+              </div>
+              <div class="push_item">
+                <div class="push_img"> <a href="#"> <img  alt="" src="images/S-SABOR-2017-russo-estilo-Primavera-Outono-Novas-mulheres-cor-s-lida-vestido-longo-com-lace.jpg" width="137"> </a> </div>
+                <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
+              </div>
+              <div class="push_item">
+                <div class="push_img"> <a href="#"> <img  alt="" src="images/S-SABOR-2017-russo-estilo-Primavera-Outono-Novas-mulheres-cor-s-lida-vestido-longo-com-lace.jpg" width="137"> </a> </div>
+                <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
+              </div>
+              <div class="push_item push_item_last">
+                <div class="push_img"> <a href="#"> <img  alt="" src="images/S-SABOR-2017-russo-estilo-Primavera-Outono-Novas-mulheres-cor-s-lida-vestido-longo-com-lace.jpg" width="137"> </a> </div>
+                <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
+              </div>
+              <br class="clear">
+            </div>
+          </div>
+        </li>
+        @endforeach
+      </ul>
+      <!-- Search-col -->
+      <div class="search-box">
+        <form action="se" method="POST" id="search_mini_form" name="search">
+          <input type="text" placeholder="Search entire store here..."  maxlength="70"  name="search" id="search">
+          <button id="submit-button" class="button-common search-btn-bg"><span class="searchIconNew"></span></button>
+        </form>
       </div>
+      <!-- End Search-col --> 
     </div>
   </div>
+</div>
 </nav>
-<section class="main-container">
-  <article class="main-container-inner container">
-    <div class="cart row">
-    <div class="page-title">
-      <h2>Shopping Cart</h2>
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12"><div class="inner">
+        <ul>
+          <li class="home"> <a title="Go to Home Page" href="home.html">Home</a><span>&mdash;&rsaquo;</span></li>
+          <li class=""> <a title="Go to Home Page" href="grid.html">Women</a><span>&mdash;&rsaquo;</span></li>
+          <li class="category13"><strong>Tops & Tees</strong></li>
+        </ul>
+      </div></div>
     </div>
-    <div class="table-responsive">
-      <table class="data-table cart-table hidden-desktop" id="shopping-cart-table">
-        <colgroup>
-        <col width="1">
-        <col>
-        <col width="1">
-        <col width="1">
-        <col width="1">
-        <col width="1">
-        <col width="1">
-        </colgroup>
-        <thead>
-          <tr class="first last">
-            <th class="hidden-table" rowspan="1">&nbsp;</th>
-            <th rowspan="1"><span class="nobr">Product Name</span></th>
-            <th colspan="1" class="a-left hidden-table"><span class="nobr">Unit Price</span></th>
-            <th class="a-left" rowspan="1">Qty</th>
-            <th colspan="1" class="a-left">Subtotal</th>
-            <th class="hidden-table" rowspan="1"></th>
-            <th class="a-left" rowspan="1">&nbsp;</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr class="first last">
-            <td class="a-right last" colspan="50"><button onClick="setLocation('#ma_optima/index.php/')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
-              <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Cart</span></span></button>
-              <button id="empty_cart_button" class="button btn-empty" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Cart</span></span></button></td>
-          </tr>
-        </tfoot>
-        <tbody>
-          @foreach($carts as $cart)
-          <tr class="first odd">
-            <td class="hidden-table"><a class="product-image" title="Proin lectus ipsum" href="#"><img width="75" alt="Proin lectus ipsum" src="/images/{{$cart->product_img}}"></a></td>
-            <td><h2 class="product-name"> <a href="#">{{$cart->product_title}}</a> </h2></td>
-            <td class="a-left hidden-table"><span class="cart-price"> <span class="price">{{$cart->product_price}}</span> </span></td>
-            <td class="a-left"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="2" name="cart[1312][qty]"></td>
-            <td class="a-left"><span class="cart-price"> <span class="price"></span> </span></td>
-            <td class="a-left hidden-table"><a title="Edit item parameters" href="..." class="edit-bnt"><span>Edit</span></a></td>
-            <td class="a-left last"><a  class="remove-item" title="Clear Cart" href="/delete/{{$cart->id}}" type="submit"  ><span><span>Remove item</span></span></a></td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-      <table class="data-table cart-table" id="shopping-cart-table">
-        <colgroup>
-        <col width="1">
-        <col>
-        <col width="1">
-        <col width="1">
-        <col width="1">
-        <col width="1">
-        <col width="1">
-        </colgroup>
-        <thead>
-          <tr class="first last">
-            <th class="hidden-phone" rowspan="1">&nbsp;</th>
-            <th rowspan="1"><span class="nobr">Product Name</span></th>
-            <th colspan="1" class="a-left"><span class="nobr">Unit Price</span></th>
-            <th class="a-left" rowspan="1">Qty</th>
-            <th colspan="1" class="a-left">Subtotal</th>
-            <th class="hidden-phone" rowspan="1"></th>
-            <th class="a-left" rowspan="1">&nbsp;</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr class="first last">
-            <td class="a-right last" colspan="50"><button onClick="setLocation('#ma_optima/index.php/')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
-              <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Cart</span></span></button>
-              <button id="empty_cart_button" class="button btn-empty" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Cart</span></span></button></td>
-          </tr>
-        </tfoot>
-        <tbody>
-        @foreach($carts as $cart)
-          <tr class="first odd">
-            <td class="hidden-phone"><a class="product-image" title="Proin lectus ipsum" href="product_detail.html"><img width="75" alt="Proin lectus ipsum" src="../products-images/product1.jpg"></a></td>
-            <td><h2 class="product-name"> <a href="product_detail.html">{{$cart->product_title}}</a> </h2></td>
-            <td class="a-left"><span class="cart-price"> <span class="price">{{$cart->product_price}}</span> </span></td>
-            <td class="a-left"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="2" name="cart[1312][qty]"></td>
-            <td class="a-left"><span class="cart-price"> <span class="price">{{$cart->product_price}}</span> </span></td>
-            <td class="a-left hidden-phone"><a title="Edit item parameters" href="#ma_optima/index.php/checkout/cart/configure/id/1314/" class="edit-bnt"><span>Edit item</span></a></td>
-            <td class="a-left last"><a class="remove-item" title="Clear Cart" href="/delete/{{$cart->id}}" ><span>Remove item</span></a></td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
-      <div class="cart-collaterals">
-        <div class="totals col-2">
-          <h3>Shopping Cart Total</h3>
-          <div class="inner">
-            <table id="shopping-cart-totals-table">
-              <col>
-              <col width="1">
-              <tfoot>
-                <tr>
-                  <td style="" class="a-left" colspan="1"><strong>Grand Total</strong></td>
-                  <td style="" class="a-right"><strong><span class="price">$950.00</span></strong></td>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td style="" class="a-left" colspan="1"> Subtotal </td>
-                  <td style="" class="a-right"><span class="price">$950.00</span></td>
-                </tr>
-              </tbody>
-            </table>
-            <ul class="checkout">
-              <li>
-                <a Proceed to Checkout"><button type="button" class="button btn-proceed-checkout" onClick="alert('you bought the product')"><span>Buy Products</span></button></a>
-              </li>
-              <br>
-              <li><a href="multiple_addresses.html">Checkout with Multiple Addresses</a></li>
-            </ul>
+  </div>
+</div>
+<!-- Breadcrumbs End -->
+
+<section class="main-container">
+  <div class=" container">
+    <div class="row">
+      <div class="col-main col-sm-9 col-sm-push-3">
+        <article class="col-main">
+          <div class="page-title">
+            <h2>Tops & Tees</h2>
           </div>
-        </div>
-        <div class="col2-set col-1">
-          <div class="shipping">
-            <h3>Estimate Shipping and Tax</h3>
-            <form action="#computerstore/checkout/cart/estimatePost/" method="post" id="shipping-zip-form">
-              <p>Enter your destination to get a shipping estimate.</p>
-              <ul id="" class="form-list">
-                <li>
-                  <label for="country">Country</label>
-                  <select name="country_id" id="country" class="validate-select" title="Country">
-                    <option value=""> </option>
-                    <option value="AF">Afghanistan</option>
-                    <option value="AL">Albania</option>
-                    <option value="DZ">Algeria</option>
-                    <option value="AS">American Samoa</option>
-                    <option value="AD">Andorra</option>
-                    <option value="AO">Angola</option>
-                    <option value="AI">Anguilla</option>
-                    <option value="AQ">Antarctica</option>
-                    <option value="AG">Antigua and Barbuda</option>
-                    <option value="AR">Argentina</option>
-                    <option value="AM">Armenia</option>
-                    <option value="AW">Aruba</option>
-                    <option value="AU">Australia</option>
-                    <option value="AT">Austria</option>
-                    <option value="AZ">Azerbaijan</option>
-                    <option value="BS">Bahamas</option>
-                    <option value="BH">Bahrain</option>
-                    <option value="BD">Bangladesh</option>
-                    <option value="BB">Barbados</option>
-                    <option value="BY">Belarus</option>
-                    <option value="BE">Belgium</option>
-                    <option value="BZ">Belize</option>
-                    <option value="BJ">Benin</option>
-                    <option value="BM">Bermuda</option>
-                    <option value="BT">Bhutan</option>
-                    <option value="BO">Bolivia</option>
-                    <option value="BA">Bosnia and Herzegovina</option>
-                    <option value="BW">Botswana</option>
-                    <option value="BV">Bouvet Island</option>
-                    <option value="BR">Brazil</option>
-                    <option value="IO">British Indian Ocean Territory</option>
-                    <option value="VG">British Virgin Islands</option>
-                    <option value="BN">Brunei</option>
-                    <option value="BG">Bulgaria</option>
-                    <option value="BF">Burkina Faso</option>
-                    <option value="BI">Burundi</option>
-                    <option value="KH">Cambodia</option>
-                    <option value="CM">Cameroon</option>
-                    <option value="CA">Canada</option>
-                    <option value="CV">Cape Verde</option>
-                    <option value="KY">Cayman Islands</option>
-                    <option value="CF">Central African Republic</option>
-                    <option value="TD">Chad</option>
-                    <option value="CL">Chile</option>
-                    <option value="CN">China</option>
-                    <option value="CX">Christmas Island</option>
-                    <option value="CC">Cocos [Keeling] Islands</option>
-                    <option value="CO">Colombia</option>
-                    <option value="KM">Comoros</option>
-                    <option value="CG">Congo - Brazzaville</option>
-                    <option value="CD">Congo - Kinshasa</option>
-                    <option value="CK">Cook Islands</option>
-                    <option value="CR">Costa Rica</option>
-                    <option value="HR">Croatia</option>
-                    <option value="CU">Cuba</option>
-                    <option value="CY">Cyprus</option>
-                    <option value="CZ">Czech Republic</option>
-                    <option value="CI">Côte d’Ivoire</option>
-                    <option value="DK">Denmark</option>
-                    <option value="DJ">Djibouti</option>
-                    <option value="DM">Dominica</option>
-                    <option value="DO">Dominican Republic</option>
-                    <option value="EC">Ecuador</option>
-                    <option value="EG">Egypt</option>
-                    <option value="SV">El Salvador</option>
-                    <option value="GQ">Equatorial Guinea</option>
-                    <option value="ER">Eritrea</option>
-                    <option value="EE">Estonia</option>
-                    <option value="ET">Ethiopia</option>
-                    <option value="FK">Falkland Islands</option>
-                    <option value="FO">Faroe Islands</option>
-                    <option value="FJ">Fiji</option>
-                    <option value="FI">Finland</option>
-                    <option value="FR">France</option>
-                    <option value="GF">French Guiana</option>
-                    <option value="PF">French Polynesia</option>
-                    <option value="TF">French Southern Territories</option>
-                    <option value="GA">Gabon</option>
-                    <option value="GM">Gambia</option>
-                    <option value="GE">Georgia</option>
-                    <option value="DE">Germany</option>
-                    <option value="GH">Ghana</option>
-                    <option value="GI">Gibraltar</option>
-                    <option value="GR">Greece</option>
-                    <option value="GL">Greenland</option>
-                    <option value="GD">Grenada</option>
-                    <option value="GP">Guadeloupe</option>
-                    <option value="GU">Guam</option>
-                    <option value="GT">Guatemala</option>
-                    <option value="GG">Guernsey</option>
-                    <option value="GN">Guinea</option>
-                    <option value="GW">Guinea-Bissau</option>
-                    <option value="GY">Guyana</option>
-                    <option value="HT">Haiti</option>
-                    <option value="HM">Heard Island and McDonald Islands</option>
-                    <option value="HN">Honduras</option>
-                    <option value="HK">Hong Kong SAR China</option>
-                    <option value="HU">Hungary</option>
-                    <option value="IS">Iceland</option>
-                    <option value="IN">India</option>
-                    <option value="ID">Indonesia</option>
-                    <option value="IR">Iran</option>
-                    <option value="IQ">Iraq</option>
-                    <option value="IE">Ireland</option>
-                    <option value="IM">Isle of Man</option>
-                    <option value="IL">Israel</option>
-                    <option value="IT">Italy</option>
-                    <option value="JM">Jamaica</option>
-                    <option value="JP">Japan</option>
-                    <option value="JE">Jersey</option>
-                    <option value="JO">Jordan</option>
-                    <option value="KZ">Kazakhstan</option>
-                    <option value="KE">Kenya</option>
-                    <option value="KI">Kiribati</option>
-                    <option value="KW">Kuwait</option>
-                    <option value="KG">Kyrgyzstan</option>
-                    <option value="LA">Laos</option>
-                    <option value="LV">Latvia</option>
-                    <option value="LB">Lebanon</option>
-                    <option value="LS">Lesotho</option>
-                    <option value="LR">Liberia</option>
-                    <option value="LY">Libya</option>
-                    <option value="LI">Liechtenstein</option>
-                    <option value="LT">Lithuania</option>
-                    <option value="LU">Luxembourg</option>
-                    <option value="MO">Macau SAR China</option>
-                    <option value="MK">Macedonia</option>
-                    <option value="MG">Madagascar</option>
-                    <option value="MW">Malawi</option>
-                    <option value="MY">Malaysia</option>
-                    <option value="MV">Maldives</option>
-                    <option value="ML">Mali</option>
-                    <option value="MT">Malta</option>
-                    <option value="MH">Marshall Islands</option>
-                    <option value="MQ">Martinique</option>
-                    <option value="MR">Mauritania</option>
-                    <option value="MU">Mauritius</option>
-                    <option value="YT">Mayotte</option>
-                    <option value="MX">Mexico</option>
-                    <option value="FM">Micronesia</option>
-                    <option value="MD">Moldova</option>
-                    <option value="MC">Monaco</option>
-                    <option value="MN">Mongolia</option>
-                    <option value="ME">Montenegro</option>
-                    <option value="MS">Montserrat</option>
-                    <option value="MA">Morocco</option>
-                    <option value="MZ">Mozambique</option>
-                    <option value="MM">Myanmar [Burma]</option>
-                    <option value="NA">Namibia</option>
-                    <option value="NR">Nauru</option>
-                    <option value="NP">Nepal</option>
-                    <option value="NL">Netherlands</option>
-                    <option value="AN">Netherlands Antilles</option>
-                    <option value="NC">New Caledonia</option>
-                    <option value="NZ">New Zealand</option>
-                    <option value="NI">Nicaragua</option>
-                    <option value="NE">Niger</option>
-                    <option value="NG">Nigeria</option>
-                    <option value="NU">Niue</option>
-                    <option value="NF">Norfolk Island</option>
-                    <option value="KP">North Korea</option>
-                    <option value="MP">Northern Mariana Islands</option>
-                    <option value="NO">Norway</option>
-                    <option value="OM">Oman</option>
-                    <option value="PK">Pakistan</option>
-                    <option value="PW">Palau</option>
-                    <option value="PS">Palestinian Territories</option>
-                    <option value="PA">Panama</option>
-                    <option value="PG">Papua New Guinea</option>
-                    <option value="PY">Paraguay</option>
-                    <option value="PE">Peru</option>
-                    <option value="PH">Philippines</option>
-                    <option value="PN">Pitcairn Islands</option>
-                    <option value="PL">Poland</option>
-                    <option value="PT">Portugal</option>
-                    <option value="PR">Puerto Rico</option>
-                    <option value="QA">Qatar</option>
-                    <option value="RO">Romania</option>
-                    <option value="RU">Russia</option>
-                    <option value="RW">Rwanda</option>
-                    <option value="RE">Réunion</option>
-                    <option value="BL">Saint Barthélemy</option>
-                    <option value="SH">Saint Helena</option>
-                    <option value="KN">Saint Kitts and Nevis</option>
-                    <option value="LC">Saint Lucia</option>
-                    <option value="MF">Saint Martin</option>
-                    <option value="PM">Saint Pierre and Miquelon</option>
-                    <option value="VC">Saint Vincent and the Grenadines</option>
-                    <option value="WS">Samoa</option>
-                    <option value="SM">San Marino</option>
-                    <option value="SA">Saudi Arabia</option>
-                    <option value="SN">Senegal</option>
-                    <option value="RS">Serbia</option>
-                    <option value="SC">Seychelles</option>
-                    <option value="SL">Sierra Leone</option>
-                    <option value="SG">Singapore</option>
-                    <option value="SK">Slovakia</option>
-                    <option value="SI">Slovenia</option>
-                    <option value="SB">Solomon Islands</option>
-                    <option value="SO">Somalia</option>
-                    <option value="ZA">South Africa</option>
-                    <option value="GS">South Georgia and the South Sandwich Islands</option>
-                    <option value="KR">South Korea</option>
-                    <option value="ES">Spain</option>
-                    <option value="LK">Sri Lanka</option>
-                    <option value="SD">Sudan</option>
-                    <option value="SR">Suriname</option>
-                    <option value="SJ">Svalbard and Jan Mayen</option>
-                    <option value="SZ">Swaziland</option>
-                    <option value="SE">Sweden</option>
-                    <option value="CH">Switzerland</option>
-                    <option value="SY">Syria</option>
-                    <option value="ST">São Tomé and Príncipe</option>
-                    <option value="TW">Taiwan</option>
-                    <option value="TJ">Tajikistan</option>
-                    <option value="TZ">Tanzania</option>
-                    <option value="TH">Thailand</option>
-                    <option value="TL">Timor-Leste</option>
-                    <option value="TG">Togo</option>
-                    <option value="TK">Tokelau</option>
-                    <option value="TO">Tonga</option>
-                    <option value="TT">Trinidad and Tobago</option>
-                    <option value="TN">Tunisia</option>
-                    <option value="TR">Turkey</option>
-                    <option value="TM">Turkmenistan</option>
-                    <option value="TC">Turks and Caicos Islands</option>
-                    <option value="TV">Tuvalu</option>
-                    <option value="UM">U.S. Minor Outlying Islands</option>
-                    <option value="VI">U.S. Virgin Islands</option>
-                    <option value="UG">Uganda</option>
-                    <option value="UA">Ukraine</option>
-                    <option value="AE">United Arab Emirates</option>
-                    <option value="GB">United Kingdom</option>
-                    <option value="US" selected="selected">United States</option>
-                    <option value="UY">Uruguay</option>
-                    <option value="UZ">Uzbekistan</option>
-                    <option value="VU">Vanuatu</option>
-                    <option value="VA">Vatican City</option>
-                    <option value="VE">Venezuela</option>
-                    <option value="VN">Vietnam</option>
-                    <option value="WF">Wallis and Futuna</option>
-                    <option value="EH">Western Sahara</option>
-                    <option value="YE">Yemen</option>
-                    <option value="ZM">Zambia</option>
-                    <option value="ZW">Zimbabwe</option>
-                    <option value="AX">Åland Islands</option>
-                  </select>
-                </li>
-                <li id="">
-                  <label for="region_id">State/Province</label>
-                  <select defaultvalue="" id="region_id" name="region_id" title="State/Province" style="">
-                    <option value="">Please select region, state or province</option>
-                    <option value="1">Alabama</option>
-                    <option value="2">Alaska</option>
-                    <option value="3">American Samoa</option>
-                    <option value="4">Arizona</option>
-                    <option value="5">Arkansas</option>
-                    <option value="6">Armed Forces Africa</option>
-                    <option value="7">Armed Forces Americas</option>
-                    <option value="8">Armed Forces Canada</option>
-                    <option value="9">Armed Forces Europe</option>
-                    <option value="10">Armed Forces Middle East</option>
-                    <option value="11">Armed Forces Pacific</option>
-                    <option value="12">California</option>
-                    <option value="13">Colorado</option>
-                    <option value="14">Connecticut</option>
-                    <option value="15">Delaware</option>
-                    <option value="16">District of Columbia</option>
-                    <option value="17">Federated States Of Micronesia</option>
-                    <option value="18">Florida</option>
-                    <option value="19">Georgia</option>
-                    <option value="20">Guam</option>
-                    <option value="21">Hawaii</option>
-                    <option value="22">Idaho</option>
-                    <option value="23">Illinois</option>
-                    <option value="24">Indiana</option>
-                    <option value="25">Iowa</option>
-                    <option value="26">Kansas</option>
-                    <option value="27">Kentucky</option>
-                    <option value="28">Louisiana</option>
-                    <option value="29">Maine</option>
-                    <option value="30">Marshall Islands</option>
-                    <option value="31">Maryland</option>
-                    <option value="32">Massachusetts</option>
-                    <option value="33">Michigan</option>
-                    <option value="34">Minnesota</option>
-                    <option value="35">Mississippi</option>
-                    <option value="36">Missouri</option>
-                    <option value="37">Montana</option>
-                    <option value="38">Nebraska</option>
-                    <option value="39">Nevada</option>
-                    <option value="40">New Hampshire</option>
-                    <option value="41">New Jersey</option>
-                    <option value="42">New Mexico</option>
-                    <option value="43">New York</option>
-                    <option value="44">North Carolina</option>
-                    <option value="45">North Dakota</option>
-                    <option value="46">Northern Mariana Islands</option>
-                    <option value="47">Ohio</option>
-                    <option value="48">Oklahoma</option>
-                    <option value="49">Oregon</option>
-                    <option value="50">Palau</option>
-                    <option value="51">Pennsylvania</option>
-                    <option value="52">Puerto Rico</option>
-                    <option value="53">Rhode Island</option>
-                    <option value="54">South Carolina</option>
-                    <option value="55">South Dakota</option>
-                    <option value="56">Tennessee</option>
-                    <option value="57">Texas</option>
-                    <option value="58">Utah</option>
-                    <option value="59">Vermont</option>
-                    <option value="60">Virgin Islands</option>
-                    <option value="61">Virginia</option>
-                    <option value="62">Washington</option>
-                    <option value="63">West Virginia</option>
-                    <option value="64">Wisconsin</option>
-                    <option value="65">Wyoming</option>
-                  </select>
-                  <input type="text" id="region" name="region" value="" title="State/Province" class="input-text" style="display: none;">
-                </li>
-                <li>
-                  <label for="postcode">Zip/Postal Code</label>
-                  <input type="text" class="input-text validate-postcode" id="postcode" name="estimate_postcode" value="">
+          <div class="category-description std">
+            <div class="slider-items-products">
+              <div id="category-desc-slider" class="product-flexslider hidden-buttons">
+                <div class="slider-items slider-width-col1 owl-carousel owl-theme"> 
+                  
+                  <!-- Item -->
+                  <div class="item"> <a href="#x"><img alt="" src="images/women_banner.png"></a>
+                    <div class="cat-img-title cat-bg cat-box">
+                      <h2 class="cat-heading">Category Banner</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </div>
+                  <!-- End Item --> 
+                  
+                  <!-- Item -->
+                  <div class="item"> <a href="#x"><img alt="" src="images/women_banner1.png"></a> </div>
+                  <!-- End Item --> 
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toolbar">
+            <div class="sorter">
+              <div class="view-mode"> <span title="Grid" class="button button-active button-grid first">Grid</span><a href="list.html" title="List" class="button button-list last">List</a> </div>
+            </div>
+            <div id="sort-by">
+              <ul>
+                <label class="left">Sort By: </label>
+                <li><a href="#">Position<span class="right-arrow"></span></a>
+                  <ul>
+                    <li><a href="#">Name</a></li>
+                    <li><a href="#">Price</a></li>
+                    <li><a href="#">Position</a></li>
+                  </ul>
                 </li>
               </ul>
-              <div class="buttons-set11">
-                <button type="button" onClick="coShippingMethodForm.submit()" class="button get-quote"><span>Get a Quote</span></button>
+              <a class="button-arrow button-desc left" href="#" title="Set Descending Direction"></a> </div>
+            <div class="pager">
+              <div id="limiter">
+                <ul>
+                  <label>View: </label>
+                  <li><a href="#">15<span class="right-arrow"></span></a>
+                    <ul>
+                      <li><a href="#">20</a></li>
+                      <li><a href="#">30</a></li>
+                      <li><a href="#">35</a></li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
-            </form>
+              <div class="pages">
+                <label>Page:</label>
+                <ol>
+                  <li> <a class="button prev i-prev" href="#" title="Prev"></a> </li>
+                  <li class="current"><span class="button button-dark">1</span></li>
+                  <li><a class="button" href="#">2</a></li>
+                  <li><a class="button" href="#">3</a></li>
+                  <li> <a class="button next i-next" href="#" title="Next"></a> </li>
+                </ol>
+              </div>
+            </div>
           </div>
-          <div class="discount">
-            <h3>Discount Codes</h3>
-            <form id="discount-coupon-form" action="#computerstore/checkout/cart/couponPost/" method="post">
-              <label for="coupon_code">Enter your coupon code if you have one.</label>
-              <input type="hidden" name="remove" id="remove-coupone" value="0">
-              <input size="35" value="" id="coupon_code" class="input-text" name="coupon_code">
-              <button class="button coupon" onClick="discountForm.submit(false)" type="button" value="Apply Coupon"><span>Apply Coupon</span></button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="crosssel">
-        <h2>Based on your selection, you may be interested in the following items:</h2>
-        <div class="category-products">
-          <ul class="products-grid first odd" id="crosssell-products-list">
-          @foreach($product as $products)
-            <li class="item">
-              <div class="item-inner">
-                <div class="product-block">
-                  <div class="product-image"> <a href="product_detail.html">
-                    <figure class="product-display">
-                      <div class="new-label new-top-right">New</div>
-                      <img src="/images/{{$products->img}}" class="lazyOwl product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="/images/{{$products->img}}"> </figure>
-                    </a> </div>
-                  <div class="product-meta">
-                    <div class="product-action"> <a class="addcart" href="javascript:;"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="javascript:;"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="javascript:;"> <i class="icon-zoom">&nbsp;</i> </a> </div>
+      @foreach($product as $products)
+              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
+                <div class="item-inner">
+                  <div class="product-block">
+                    <div class="product-image"> <a href="product_detail.html">
+                      <figure class="product-display">
+                        <div class="sale-label sale-top-left">Sale</div>
+                        <img src="/images/{{$products->img}}" class="lazyOwl product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="/images/{{$products->img}}"> </figure>
+                      </a> </div>
+                    <div class="product-meta">
+                      <div class="product-action"> <a class="addcart" href="/addtocart/{{$products->id}}"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
+                    </div>
                   </div>
-                </div>
-                <div class="item-info">
-                  <div class="info-inner">
-                    <div class="item-title"> <a href="product_detail.html" title="Stablished fact reader">{{$products->title}}</a> </div>
-                    <div class="item-content">
-                      <div class="item-price">
-                        <div class="price-box">
-                          <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price" id="old-price-27">{{$products->old price}}</span> </p>
-                          <p class="special-price"> <span class="price-label">Special Price</span> <span class="price" id="product-price-27">{{$products->price}}</span> </p>
-                        </div>
-                      </div>
-                      <div class="rating">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating" style="width:0%"></div>
+                  <div class="item-info">
+                    <div class="info-inner">
+                      <div class="item-title"> <a href="product_detail.html" title="Stablished fact reader"> {{$products->title}} </a> </div>
+                      <div class="item-content">
+                        <div class="item-price">
+                          <div class="price-box">
+                            <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price" id="old-price-27">{{$products->old price}}</span> </p>
+                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price" id="product-price-27">{{$products->price}}</span> </p>
                           </div>
-                          <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
+                        </div>
+                        <div class="rating">
+                          <div class="ratings">
+                            <div class="rating-box">
+                              <div class="rating" style="width:0%"></div>
+                            </div>
+                            <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+              </li>
+              @endforeach
+
+
+
+
+
+      <!--	///*///======    End Col Main  ========= //*/// -->
+      <div class="col-sm-3 col-xs-12 col-sm-pull-9">
+        <aside class="col-left sidebar">
+          <div class="LHS-nav">
+            <div id="magik-verticalmenu" class="block magik-verticalmenu">
+          <div class="nav-title"> <span>Categories</span> </div>
+          <b class="caret-arrow">&nbsp;</b>
+          <div class="nav-content">
+            <div class="navbar navbar-inverse">
+              <div id="verticalmenu" class="verticalmenu" role="navigation">
+                <div class="navbar">
+                  <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav verticalmenu">
+                      <li class=" parent dropdown "> <a href="grid.html" class="dropdown-toggle" data-toggle="dropdown"><span class="menu-title">Women</span><b class="round-arrow"></b></a>
+                        <div class="dropdown-menu" style="width:580px">
+                          <div class="dropdown-menu-inner">
+                            <div class="row">
+                              <div class="mega-col" data-widgets="wid-5" data-colwidth="6">
+                                <div class="mega-col-inner">
+                                  <div class="ves-widget">
+                                    <div class="menu-title">Styliest Bag </div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"> <span>Clutch Handbags</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Diaper Bags</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Bags</span> </a> </li>
+                                          <li class="last"> <a href="grid.html"> <span>Hobo Handbags</span> </a> </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Material Bag</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"> <span>Beaded Handbags</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Fabric Handbags</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Handbags</span> </a> </li>
+                                          <li class="last"> <a href="grid.html"> <span>Leather Handbags</span> </a> </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Designer Bag</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"> <span>Flat Shoes</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Flat Sandals</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Boots</span> </a> </li>
+                                          <li class="last"> <a href="grid.html"> <span>Heels</span> </a> </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Cotton Bag</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"> <span>Bracelets</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Necklaces &amp; Pendants</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Pendants</span> </a> </li>
+                                          <li class="last"> <a href="grid.html"> <span>Pins &amp; Brooches</span> </a> </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-6">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Swimwear</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"> <span>Swimsuits</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Beach Clothing</span> </a> </li>
+                                          <li> <a href="grid.html"> <span>Clothing</span> </a> </li>
+                                          <li class="last"> <a href="grid.html"> <span>Bikinis</span> </a> </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="cat_img"><span class="left-cat-img"><img src="images/women_jwellery.png" alt="jwellery"></span>                          <span class="left-cat-img1"><img src="images/women_bag.png" alt="bag"></span> </div>
+                        </div>
+                      </li>
+                      <li class="parent dropdown "> <a href="grid.html" class="dropdown-toggle" data-toggle="dropdown"><span class="menu-title">Men</span><b class="round-arrow"></b></a>
+                        <div class="dropdown-menu" style="width:580px">
+                          <div class="dropdown-menu-inner">
+                            <div class="row">
+                              <div class="mega-col" data-widgets="wid-5" data-colwidth="6">
+                                <div class="mega-col-inner">
+                                  <div class="ves-widget">
+                                    <div class="menu-title">Shoes</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Sport Shoes</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Casual Shoes</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Leather Shoes</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Canvas shoes</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Dresses</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Casual Dresses</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Evening</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Designer</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Party</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Jackets</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Coats</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Formal Jackets</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Leather Jackets</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Blazers</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Watches</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Fasttrack</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Casio</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Titan</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Tommy-Hilfiger</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-6">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Sunglasses</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid-ban.html"><span>Ray Ban</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Fasttrack</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Police</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Oakley</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="parent dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="grid.html"><span class="menu-title">Electronics</span><b class="round-arrow"></b></a>
+                        <div class="dropdown-menu" style="width:580px">
+                          <div class="dropdown-menu-inner">
+                            <div class="row">
+                              <div class="mega-col" data-widgets="wid-5" data-colwidth="6">
+                                <div class="mega-col-inner">
+                                  <div class="ves-widget">
+                                    <div class="menu-title">Mobiles </div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Samsung</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Nokia</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>iPhone</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Sony</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Mobiles Accesories</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Mobile Memory Cards</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Cases &amp; Covers</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Mobile Headphones</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Bluetooth Headsets</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Cameras</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Camcorders</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Point &amp; Shoot</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Digital SLR</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Camera Accesories</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Audio & Video</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>MP3 Players</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>IPods</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Speakers</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Video Players</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="parent dropdown "> <a class="dropdown-toggle" data-toggle="dropdown" href="grid.html"><span class="menu-title">Furniture</span><b class="round-arrow"></b></a>
+                        <div class="dropdown-menu" style="width:580px">
+                          <div class="dropdown-menu-inner">
+                            <div class="row">
+                              <div class="mega-col" data-widgets="wid-5" data-colwidth="6">
+                                <div class="mega-col-inner">
+                                  <div class="ves-widget">
+                                    <div class="menu-title">Living Room </div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Racks &amp; Cabinets</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Sofas</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Chairs</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Tables</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Dining & Bar</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Dining Table Sets</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Serving Trolleys</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Bar Counters</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Dining Cabinets</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col" data-colwidth="6" data-widgets="wid-7">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="menu-title">Bedroom</div>
+                                    <div class="widget-html">
+                                      <div class="widget-inner">
+                                        <ul>
+                                          <li class="first"> <a href="grid.html"><span>Beds</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Chest of Drawers</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li> <a href="grid.html"><span>Wardrobes &amp; Almirahs</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                          <li class="last"> <a href="grid.html"><span>Nightstands</span></a> </li>
+                                          <!--level2 nav-6-1-1-->
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div data-widgets="wid-8" data-colwidth="6" class="mega-col">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget"> 
+                                    <!-- <div class="menu-title">Demo Images</div> -->
+                                    <div class="widget-image">
+                                      <div class="widget-inner clearfix">
+                                        <div><img title="" alt="" src="images/menu_furniture1.png"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class=""> <a href="grid.html"><span class="menu-title"> Boys</span></a></li>
+                      <li class=""> <a href="grid.html"><span class="menu-title">Girls</span></a></li>
+                      <li class=" parent dropdown "> <a href="grid.html" class="dropdown-toggle" data-toggle="dropdown"><span class="menu-title">Custom</span><b class="round-arrow"></b></a>
+                        <div class="dropdown-menu" style="width:520px">
+                          <div class="dropdown-menu-inner">
+                            <div class="row">
+                              <div class="mega-col" data-widgets="wid-1" data-colwidth="8">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="product-block">
+                                      <div class="image"><a href="grid.html"><img src="images/custom-img1.jpg" alt="Fauxwaii Shirt - Oldss" width="240"></a></div>
+                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col right_col" data-widgets="wid-2" data-colwidth="8">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="widget-product">
+                                      <div class="widget-inner">
+                                        <div class="product-block">
+                                          <div class="image"><a href="grid.html"><img src="images/custom-img1.jpg" alt="Framed-Sleeve Mid" width="240"></a></div>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="mega-col" data-widgets="wid-1" data-colwidth="8">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="product-block">
+                                      <div class="image"><a href="grid.html"><img src="images/custom-img1.jpg" alt="Fauxwaii Shirt - Oldss" width="240"></a></div>
+                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mega-col right_col" data-widgets="wid-2" data-colwidth="8">
+                                <div class="mega-col-inner">
+                                  <div class="magik-widget">
+                                    <div class="widget-product">
+                                      <div class="widget-inner">
+                                        <div class="product-block">
+                                          <div class="image"><a href="grid.html"><img src="images/custom-img1.jpg" alt="Framed-Sleeve Mid" width="240"></a></div>
+                                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </li>
-            @endforeach
-          </ul>
+            </div>
+          </div>
         </div>
+          </div>
+          <div class="side-nav-categories">
+            <div class="block-title"> Categories </div>
+            <!--block-title--> 
+            <!-- BEGIN BOX-CATEGORY -->
+            <div class="box-content box-category">
+              <ul>
+                <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women.html" class="active">Women</a> <span class="subDropdown minus"></span>
+                  <ul style="display:block" class="level0_415">
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/tops.html"> Tops </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/tops/evening-tops.html"> Evening Tops </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/tops/shirts-blouses.html"> Shirts &amp; Blouses </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/tops/tunics.html"> Tunics </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/tops/vests.html"> Vests </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/bags.html"> Bags </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/bags/bags.html"> Bags </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/bags/designer-handbags.html"> Designer Handbags </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/bags/purses.html"> Purses </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/bags/shoulder-bags.html"> Shoulder Bags </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/shoes.html"> Shoes </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/shoes/flat-shoes.html"> Flat Shoes </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/shoes/flat-sandals.html"> Flat Sandals </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/shoes/boots.html"> Boots </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/shoes/heels.html"> Heels </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jewelry.html"> Jewelry </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jewelry/bracelets.html"> Bracelets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jewelry/necklaces-pendants.html"> Necklaces &amp; Pendants </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jewelry/pins-brooches.html"> Pins &amp; Brooches </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/dresses.html"> Dresses </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/dresses/casual-dresses.html"> Casual Dresses </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/dresses/evening.html"> Evening </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/dresses/designer.html"> Designer </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/dresses/party.html"> Party </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/lingerie.html"> Lingerie </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/lingerie/bras.html"> Bras </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/lingerie/bodies.html"> Bodies </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/lingerie/necklaces-pendants.html"> Lingerie Sets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/lingerie/shapewear.html"> Shapewear </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jackets.html"> Jackets </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jackets/coats.html"> Coats </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jackets/jackets.html"> Jackets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jackets/leather-jackets.html"> Leather Jackets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/jackets/blazers.html"> Blazers </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/swimwear.html"> Swimwear </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/swimwear/swimsuits.html"> Swimsuits </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/swimwear/beach-clothing.html"> Beach Clothing </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/women/swimwear/bikinis.html"> Bikinis </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                  </ul>
+                  <!--level0--> 
+                </li>
+                <!--level 0-->
+                <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men.html">Men</a> <span class="subDropdown plus"></span>
+                  <ul style="display:none" class="level0_455">
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/shoes.html"> Shoes </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/shoes/flat-shoes.html"> Flat Shoes </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/shoes/boots.html"> Boots </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/shoes/heels.html"> Heels </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jewelry.html"> Jewelry </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jewelry/bracelets.html"> Bracelets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jewelry/necklaces-pendants.html"> Necklaces &amp; Pendants </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jewelry/pins-brooches.html"> Pins &amp; Brooches </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/dresses.html"> Dresses </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/dresses/casual-dresses.html"> Casual Dresses </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/dresses/evening.html"> Evening </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/dresses/designer.html"> Designer </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/dresses/party.html"> Party </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jackets.html"> Jackets </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jackets/coats.html"> Coats </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jackets/jackets.html"> Jackets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jackets/leather-jackets.html"> Leather Jackets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/jackets/blazers.html"> Blazers </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/swimwear.html"> Swimwear </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/swimwear/swimsuits.html"> Swimsuits </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/men/swimwear/beach-clothing.html"> Beach Clothing </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                  </ul>
+                  <!--level0--> 
+                </li>
+                <!--level 0-->
+                <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics.html">Electronics</a> <span class="subDropdown plus"></span>
+                  <ul style="display:none" class="level0_482">
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/smartphones.html"> Smartphones </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/smartphones/samsung.html"> Samsung </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/smartphones/apple.html"> Apple </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/smartphones/blackberry.html"> Blackberry </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/smartphones/nokia.html"> Nokia </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/smartphones/htc.html"> HTC </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/cameras.html"> Cameras </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/cameras/digital-cameras.html"> Digital Cameras </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/cameras/camcorders.html"> Camcorders </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/cameras/lenses.html"> Lenses </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/cameras/filters.html"> Filters </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/cameras/tripod.html"> Tripod </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                    <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/accesories.html"> Accesories </a> <span class="subDropdown plus"></span>
+                      <ul style="display:none" class="level1">
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/accesories/headsets.html"> HeadSets </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/accesories/batteries.html"> Batteries </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/accesories/screen-protectors.html"> Screen Protectors </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/accesories/memory-cards.html"> Memory Cards </a> </li>
+                        <li> <a href="http://magento.magikthemes.com/index.php/magikshop/electronics/accesories/cases.html"> Cases </a> </li>
+                        <!--end for-each -->
+                      </ul>
+                      <!--level1--> 
+                    </li>
+                    <!--level1-->
+                  </ul>
+                  <!--level0--> 
+                </li>
+                <!--level 0-->
+                <li> <a href="http://magento.magikthemes.com/index.php/magikshop/digital.html">Digital</a> </li>
+                <!--level 0-->
+                <li class="last"> <a href="http://magento.magikthemes.com/index.php/magikshop/fashion.html">Fashion</a> </li>
+                <!--level 0-->
+              </ul>
+            </div>
+            <!--box-content box-category--> 
+          </div>
+          <div class="block block-layered-nav">
+            <div class="block-title">Shop By</div>
+            <div class="block-content">
+              <p class="block-subtitle">Shopping Options</p>
+              <dl id="narrow-by-list">
+                <dt class="odd">Price</dt>
+                <dd class="odd">
+                  <ol>
+                    <li> <a href="#"><span class="price">$0.00</span> - <span class="price">$99.99</span></a> (6) </li>
+                    <li> <a href="#"><span class="price">$100.00</span> and above</a> (6) </li>
+                  </ol>
+                </dd>
+                <dt class="even">Manufacturer</dt>
+                <dd class="even">
+                  <ol>
+                    <li> <a href="#">TheBrand</a> (9) </li>
+                    <li> <a href="#">Company</a> (4) </li>
+                    <li> <a href="#">LogoFashion</a> (1) </li>
+                  </ol>
+                </dd>
+                <dt class="odd">Color</dt>
+                <dd class="odd">
+                  <ol>
+                    <li> <a href="#">Green</a> (1) </li>
+                    <li> <a href="#">White</a> (5) </li>
+                    <li> <a href="#">Black</a> (5) </li>
+                    <li> <a href="#">Gray</a> (4) </li>
+                    <li> <a href="#">Dark Gray</a> (3) </li>
+                    <li> <a href="#">Blue</a> (1) </li>
+                  </ol>
+                </dd>
+                <dt class="last even">Size</dt>
+                <dd class="last even">
+                  <ol>
+                    <li> <a href="#">S</a> (6) </li>
+                    <li> <a href="#">M</a> (6) </li>
+                    <li> <a href="#">L</a> (4) </li>
+                    <li> <a href="#">XL</a> (4) </li>
+                  </ol>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="block block-cart">
+            <div class="block-title ">My Cart</div>
+            <div class="block-content">
+              <div class="summary">
+                <p class="amount">There are <a href="#">2 items</a> in your cart.</p>
+                <p class="subtotal"> <span class="label">Cart Subtotal:</span> <span class="price">$27.99</span> </p>
+              </div>
+              <div class="ajax-checkout">
+                <button class="button button-checkout" title="Submit" type="submit"><span>Checkout</span></button>
+              </div>
+              <p class="block-subtitle">Recently added item(s) </p>
+              <ul>
+                <li class="item"> <a href="product_detail.html" title="Fisher-Price Bubble Mower" class="product-image"><img width="60" src="../products-images/product1.jpg" alt="Fisher-Price Bubble Mower"></a>
+                  <div class="product_details">
+                    <div class="access"> <a href="#" title="Remove This Item" class="btn-remove1"> <span class="icon"></span> Remove </a> </div>
+                    <p class="product-name"> <a href="product_detail.html">Sample Product</a> </p>
+                    <strong>1</strong> x <span class="price">$19.99</span> </div>
+                </li>
+                <li class="item last"> <a href="product_detail.html" title="Prince Lionheart Jumbo Toy Hammock" class="product-image"><img width="60" src="../products-images/product1.jpg" alt="Prince Lionheart Jumbo Toy Hammock"></a>
+                  <div class="product_details">
+                    <div class="access"> <a href="#" title="Remove This Item" class="btn-remove1"> <span class="icon"></span> Remove </a> </div>
+                    <p class="product-name"> <a href="product_detail.html">Sample Product</a> </p>
+                    <strong>1</strong> x <span class="price">$8.00</span> 
+                    <!--access clearfix--> 
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="block block-compare">
+            <div class="block-title ">Compare Products (2)</div>
+            <div class="block-content">
+              <ol id="compare-items">
+                <li class="item odd">
+                  <input type="hidden" value="2173" class="compare-item-id">
+                  <a class="btn-remove1" title="Remove This Item" href="#"></a> <a href="#" class="product-name">Sample Product</a> </li>
+                <li class="item last even">
+                  <input type="hidden" value="2174" class="compare-item-id">
+                  <a class="btn-remove1" title="Remove This Item" href="#"></a> <a href="#" class="product-name">Sample Product</a> </li>
+              </ol>
+              <div class="ajax-checkout">
+                <button type="submit" title="Submit" class="button button-compare"><span>Compare</span></button>
+                <button type="submit" title="Submit" class="button button-clear"><span>Clear</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="block block-subscribe">
+            <div class="block-title">Newsletter</div>
+            <form id="newsletter-validate-detail1" method="post" action="#">
+              <div class="block-content">
+                <div class="form-subscribe-header"> Sign up for our newsletter:</div>
+                <input type="text" placeholder="Enter your email address" class="input-text required-entry validate-email" title="" id="newsletter" name="email">
+                <div class="actions">
+                  <button class="button button-subscribe" title="Submit" type="submit"><span>Subscribe</span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="block block-list block-viewed">
+            <div class="block-title"> Recently Viewed </div>
+            <div class="block-content">
+              <ol id="recently-viewed-items">
+                <li class="item odd">
+                  <p class="product-name"><a href="#"> Armchair with Box-Edge Upholstered Arm</a></p>
+                </li>
+                <li class="item even">
+                  <p class="product-name"><a href="#"> Pearce Upholstered Slee pere</a></p>
+                </li>
+                <li class="item last odd">
+                  <p class="product-name"><a href="#"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a></p>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="block block-list block-compared">
+            <div class="block-title"> Recently Compared </div>
+            <div class="block-content">
+              <ol id="recently-compared-items">
+                <li class="item odd">
+                  <p class="product-name"><a href="#"> Armchair with Box-Edge Upholstered Arm</a></p>
+                </li>
+                <li class="item even">
+                  <p class="product-name"><a href="#"> Pearce Upholstered Slee pere</a></p>
+                </li>
+                <li class="item last odd">
+                  <p class="product-name"><a href="#"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a></p>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="block block-poll">
+            <div class="block-title">Community Poll </div>
+            <form id="pollForm" action="http://www.magikcommerce.com/poll/vote/add/poll_id/2/" method="post" onSubmit="return validatePollAnswerIsSelected();">
+              <div class="block-content">
+                <p class="block-subtitle">What is your favorite Magento feature?</p>
+                <ul id="poll-answers">
+                  <li class="odd">
+                    <input type="radio" name="vote" class="radio poll_vote" id="vote_5" value="5">
+                    <span class="label">
+                    <label for="vote_5">Layered Navigation</label>
+                    </span> </li>
+                  <li class="even">
+                    <input type="radio" name="vote" class="radio poll_vote" id="vote_6" value="6">
+                    <span class="label">
+                    <label for="vote_6">Price Rules</label>
+                    </span> </li>
+                  <li class="odd">
+                    <input type="radio" name="vote" class="radio poll_vote" id="vote_7" value="7">
+                    <span class="label">
+                    <label for="vote_7">Category Management</label>
+                    </span> </li>
+                  <li class="last even">
+                    <input type="radio" name="vote" class="radio poll_vote" id="vote_8" value="8">
+                    <span class="label">
+                    <label for="vote_8">Compare Products</label>
+                    </span> </li>
+                </ul>
+                <div class="actions">
+                  <button type="submit" title="Vote" class="button button-vote"><span>Vote</span></button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="block block-tags">
+            <div class="block-title"> Popular Tags</div>
+            <div class="block-content">
+              <ul class="tags-list">
+                <li><a href="#" style="font-size:98.3333333333%;">Camera</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">Hohoho</a></li>
+                <li><a href="#" style="font-size:145%;">SEXY</a></li>
+                <li><a href="#" style="font-size:75%;">Tag</a></li>
+                <li><a href="#" style="font-size:110%;">Test</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">bones</a></li>
+                <li><a href="#" style="font-size:110%;">cool</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">cool t-shirt</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">crap</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">good</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">green</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">hip</a></li>
+                <li><a href="#" style="font-size:75%;">laptop</a></li>
+                <li><a href="#" style="font-size:75%;">mobile</a></li>
+                <li><a href="#" style="font-size:75%;">nice</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">phone</a></li>
+                <li><a href="#" style="font-size:98.3333333333%;">red</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">tight</a></li>
+                <li><a href="#" style="font-size:75%;">trendy</a></li>
+                <li><a href="#" style="font-size:86.6666666667%;">young</a></li>
+              </ul>
+              <div class="actions"> <a href="#" class="view-all">View All Tags</a> </div>
+            </div>
+          </div>
+          <div class="block block-banner"><a href="#"><img alt="" src="images/block-banner.png"></a></div>
+        </aside>
       </div>
+      <!--	///*///======    End Main Container  ========= //*/// --> 
     </div>
-  </article>
+  </div>
 </section>
 
-<!-- Footer Starts -->
+ <!-- Footer Starts -->
 <footer>
   <div class="brand-logo">
     <div class="container">
