@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');   
             $table->integer('raiting');    
             $table->integer('view');
-            $table->float('old price');
+            $table->float('old_price');
             $table->float('price'); 
             $table->text('anons'); 
             $table->text('text'); 
