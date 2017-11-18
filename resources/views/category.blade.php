@@ -433,27 +433,27 @@
               </div>
             </div>
           </div>
-      @foreach($product as $products)
+      @foreach($products as $product)
               <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
                 <div class="item-inner">
                   <div class="product-block">
                     <div class="product-image"> <a href="product_detail.html">
                       <figure class="product-display">
                         <div class="sale-label sale-top-left">Sale</div>
-                        <img src="/images/{{$products->img}}" class="lazyOwl product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="/images/{{$products->img}}"> </figure>
+                        <img src="/images/{{$product->img}}" class="lazyOwl product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="/images/{{$product->img}}"> </figure>
                       </a> </div>
                     <div class="product-meta">
-                      <div class="product-action"> <a class="addcart" href="/addtocart/{{$products->id}}"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
+                      <div class="product-action"> <a class="addcart" href="/addtocart/{{$product->id}}"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a class="quickview" href="quick_view.html"> <i class="icon-zoom">&nbsp;</i> </a> </div>
                     </div>
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Stablished fact reader"> {{$products->title}} </a> </div>
+                      <div class="item-title"> <a href="product_detail.html" title="Stablished fact reader"> {{$product->title}} </a> </div>
                       <div class="item-content">
                         <div class="item-price">
                           <div class="price-box">
-                            <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price" id="old-price-27">{{$products->old price}}</span> </p>
-                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price" id="product-price-27">{{$products->price}}</span> </p>
+                            <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price" id="old-price-27">{{$product->old_price ? $product->old_price  : null}}</span> </p>
+                            <p class="special-price"> <span class="price-label">Special Price</span> <span class="price" id="product-price-27">{{$product->price}}$</span> </p>
                           </div>
                         </div>
                         <div class="rating">
@@ -468,7 +468,8 @@
                     </div>
                   </div>
                 </div>
-              </li>@endforeach
+              </li>
+              @endforeach
 
 
 
