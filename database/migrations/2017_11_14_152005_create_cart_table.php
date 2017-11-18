@@ -18,7 +18,7 @@ class CreateCartTable extends Migration
             $table->integer('user_id');   
             $table->integer('product_id'); 
             $table->float('product_price'); 
-            $table->string('product_title'); 
+            $table->string('product_title')->nullable(); 
             $table->string('product_img'); 
         });
     }
