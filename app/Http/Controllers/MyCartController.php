@@ -35,4 +35,3 @@ class MyCartController extends Controller
         return redirect('/showmycart');
     }
 }
-
