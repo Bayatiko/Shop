@@ -448,7 +448,7 @@
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Stablished fact reader"> {{$product->title}} </a> </div>
+                      <div class="item-title"> <a href="product_detail.html" title="Stablished fact reader"> {{$product->name}} </a> </div>
                       <div class="item-content">
                         <div class="item-price">
                           <div class="price-box">
