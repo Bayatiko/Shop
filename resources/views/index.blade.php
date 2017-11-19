@@ -934,7 +934,7 @@
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">{{$products->title}}</a> </div>
+                      <div class="item-title"> <a href="product_detail.html" title="Sample Product">{{$products->name}}</a> </div>
                       <div class="item-content">
                         <div class="item-price">
                           <div class="price-box"> <span class="regular-price"> <span class="price">{{$products->price}}</span> </span> </div>
@@ -972,7 +972,7 @@
               <div class="col-item">
                 <div class="item-inner">
                   <div class="product-block">
-                    <div class="product-image"> <a href="product_detail.html">
+                    <div class="product-image"> <a href="#">
                       <figure class="product-display">
                         <div class="sale-label sale-top-left">Sale</div>
                         <img src="../images/{{$products->img}}" class="product-mainpic" alt="" style="display: block;"> <img class="product-secondpic" alt="" src="../products-images/product1.jpg"> </figure><!---poxel---->
