@@ -31,4 +31,4 @@ Route::put('/password/reset/{token}','Auth\AdminResetPasswordController@showRese
 
 Route::get('/delete/{id}',
 ['uses' => 'MyCartController@delete']);
-Route::get('/category/{id}','CategoryController@index');
+Route::get('/category/{id}','CategoryController@CategoryAll');
