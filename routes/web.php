@@ -28,7 +28,6 @@ Route::get('/password/reset','Auth\AdminForgotPasswordController@showLinkRequest
 Route::put('/password/reset','Auth\AdminResetPasswordController@reset');
 Route::put('/password/reset/{token}','Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');     
 });
-
 Route::get('/delete/{id}',
 ['uses' => 'MyCartController@delete']);
 Route::get('/category/{id}','CategoryController@CategoryAll');
